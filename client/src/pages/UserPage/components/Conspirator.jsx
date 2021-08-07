@@ -17,8 +17,8 @@ const Conspirator = (props) => {
   const { username, profileImage, _id } = conspirator;
   const { updateConspirator, usersInChat, userObj } = useContext(UserContext);
 
-  const textColor = useColorModeValue('green.200', 'green.700');
-  const greyColor = useColorModeValue('gray.600', 'gray.300');
+  const textColor = useColorModeValue('green.700', 'green.200');
+  const greyColor = useColorModeValue('gray.300', 'gray.600');
 
   return (
     <Box

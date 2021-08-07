@@ -17,8 +17,8 @@ const Comment = (props) => {
 
   const { addConspirator, userObj } = useContext(UserContext);
 
-  const textColor = useColorModeValue('green.100', 'green.700');
-  const greyColor = useColorModeValue('gray.600', 'gray.300');
+  const textColor = useColorModeValue('green.700', 'green.100');
+  const greyColor = useColorModeValue('gray.300', 'gray.600');
 
   return (
     <Box

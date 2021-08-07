@@ -10,21 +10,21 @@ import {
   PopoverBody,
   PopoverContent,
   useDisclosure,
-  useColorModeValue	
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 const AddFriendPopover = (props) => {
   const { userObj, addConspirator, userName } = props;
   const { onClose } = useDisclosure();
-	const color = useColorModeValue('whiteAlpha.900', 'blackAlpha.900')
+  const color = useColorModeValue('blackAlpha.900', 'whiteAlpha.900');
   return (
     <Popover>
       <PopoverTrigger>
         <Button
-	  colorscheme="blue"
+          colorscheme="blue"
           color={color}
-	  variant="ghost"
-	  >
+          variant="ghost"
+        >
           Add
           {' '}
           {userName}

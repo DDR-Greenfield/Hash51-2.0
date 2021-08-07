@@ -26,7 +26,7 @@ const App = () => {
   // eslint-disable-next-line no-unused-vars
   const { toggleColorMode } = useColorMode();
 
-  const bg = useColorModeValue('#3a2a5e', '#543d8a');
+  const bg = useColorModeValue('#543d8a', '#3a2a5e');
 
   return (
     <div>

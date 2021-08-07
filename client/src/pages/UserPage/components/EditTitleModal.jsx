@@ -23,7 +23,7 @@ const EditTitleModal = (props) => {
   return (
     <>
       <Button
-        colorScheme="white"
+        variant="ghost"
         onClick={onOpen}
       >
         Edit

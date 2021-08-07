@@ -15,14 +15,14 @@ import {
   Box,
   FormControl,
   InputRightElement,
-  useColorModeValue
-} from "@chakra-ui/react";
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import { UserContext } from '../../../contexts/UserContext';
 
 import GoogleButton from './GoogleButton';
 
-const Login = props => {
+const Login = (props) => {
   const { createUserClick } = props;
   const [showPassword] = useState(false);
 
@@ -31,13 +31,12 @@ const Login = props => {
     passLogin,
     handleUserLogin,
     handlePassLogin,
-    localLogin 
+    localLogin,
   } = useContext(UserContext);
 
-  const textColor = useColorModeValue("green.500", "green.300");
-  const whiteColor = useColorModeValue("whiteAlpha.900" , "blackAlpha.900");
-  const greyColor = useColorModeValue("gray.600" , "gray.300");
-
+  const textColor = useColorModeValue('green.300', 'green.500');
+  const whiteColor = useColorModeValue('blackAlpha.900', 'whiteAlpha.900');
+  const greyColor = useColorModeValue('gray.300', 'gray.600');
 
   return (
     <Flex
@@ -53,7 +52,7 @@ const Login = props => {
         alignItems="center"
       >
         <Heading color={textColor}>We want to believe...</Heading>
-        <Box minW={{ base: "90%", md: "468px" }}>
+        <Box minW={{ base: '90%', md: '468px' }}>
           <form>
             <Stack
               spacing={4}
@@ -82,7 +81,7 @@ const Login = props => {
                     color={greyColor}
                   />
                   <Input
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     placeholder="Password"
                     value={passLogin}
                     onChange={handlePassLogin}
@@ -90,28 +89,30 @@ const Login = props => {
                   <InputRightElement width="4.5rem">
                     <Button
                       h="1.75rem"
-                      size="sm">
-                      {showPassword ? "Hide" : "Show"}
+                      size="sm"
+                    >
+                      {showPassword ? 'Hide' : 'Show'}
                     </Button>
                   </InputRightElement>
                 </InputGroup>
               </FormControl>
-                <Link to='/'>
-                  <Button
-                    borderRadius={10}
-                    type="submit"
-                    variant="solid"
-                    colorScheme="purple"
-                    onClick={() => localLogin(userLogin, passLogin)}
-                  >
-                    Login
-                  </Button>
-                </Link>
-                
-                <GoogleButton />
+              <Link to="/">
+                <Button
+                  borderRadius={10}
+                  type="submit"
+                  variant="solid"
+                  colorScheme="purple"
+                  onClick={() => localLogin(userLogin, passLogin)}
+                >
+                  Login
+                </Button>
+              </Link>
+
+              <GoogleButton />
 
               <Box>
-                Do we know you?{" "}
+                Do we know you?
+                {' '}
               </Box>
               <Button
                 borderRadius={10}

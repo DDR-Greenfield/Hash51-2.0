@@ -1,5 +1,5 @@
 // eslint-disable-file anchor-is-valid
-import React, { useContext } from "react";
+import React, { useContext } from 'react';
 
 import {
   Flex,
@@ -7,22 +7,15 @@ import {
   Link,
   Box,
   useColorMode,
-  useColorModeValue
-} from "@chakra-ui/react";
+  useColorModeValue,
+} from '@chakra-ui/react';
 
-import { UserContext } from "../contexts/UserContext";
-
+import { UserContext } from '../contexts/UserContext';
 
 const Header = () => {
-
-
-  const { toggleColorMode } = useColorMode();
-  const textColor = useColorModeValue("green.500", "green.300");
-  const header = useColorModeValue("#201830", "#34274f");
-
-
-
-
+  const { toggleColorMode } = useColorMode('light');
+  const textColor = useColorModeValue('green.300', 'green.500');
+  const header = useColorModeValue('#34274f', '#201830');
   const { isLoggedIn, localLogout } = useContext(UserContext);
   return (
     <div>
@@ -32,17 +25,17 @@ const Header = () => {
         bg={header}
         p={1}
       >
-      <Link href="/">
-        <Heading
-          as="h3"
-          size="lg"
-          m={1}
-          color={textColor}
-          ml="14.5vw"
-        >
-          Hash#51
-        </Heading>
-      </Link>
+        <Link href="/">
+          <Heading
+            as="h3"
+            size="lg"
+            m={1}
+            color={textColor}
+            ml="14.5vw"
+          >
+            Hash#51
+          </Heading>
+        </Link>
         <Heading
           as="h3"
           size="md"
@@ -54,40 +47,45 @@ const Header = () => {
             href="/search"
           >
             Get evidence
-          </Link> {" "}
+          </Link>
+          {' '}
+          {' '}
           <Link
             color={textColor}
             ml="2vw"
             href="/userPage"
           >
             Conspiracies
-          </Link>{" "}
-          
+          </Link>
+          {' '}
 
           <Link
-          onClick={toggleColorMode}
-          color={textColor}
-          ml="2vw"
+            onClick={toggleColorMode}
+            color={textColor}
+            ml="2vw"
           >
             Toggle Color
-          </Link> 
+          </Link>
           { isLoggedIn ?
-            (<Link
-              color={textColor}
-              ml="2vw"
-              href="/userLogin"
-              onClick={ localLogout }
-            >
-              Log Out
-            </Link>) :
-            (<Link
-              color={textColor}
-              ml="2vw"
-              href="/userLogin"
-            >
-              Join us
-            </Link>)
-          }
+            (
+              <Link
+                color={textColor}
+                ml="2vw"
+                href="/userLogin"
+                onClick={localLogout}
+              >
+                Log Out
+              </Link>
+            ) :
+            (
+              <Link
+                color={textColor}
+                ml="2vw"
+                href="/userLogin"
+              >
+                Join us
+              </Link>
+            )}
 
         </Heading>
       </Flex>

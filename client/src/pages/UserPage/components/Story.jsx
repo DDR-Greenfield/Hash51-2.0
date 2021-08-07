@@ -23,10 +23,10 @@ const Story = (props) => {
   const { addConspirator, userObj, isLoggedIn } = useContext(UserContext);
   const { deleteStory } = useContext(DisplayContext);
 
-  const textColor = useColorModeValue('green.100', 'green.700');
-  const whiteColor = useColorModeValue('whiteAlpha.900', 'blackAlpha.900');
-  const greyColor = useColorModeValue('gray.600', 'gray.300');
-  const redColor = useColorModeValue('red.100', 'red.800');
+  const textColor = useColorModeValue('green.700', 'green.100');
+  const whiteColor = useColorModeValue('blackAlpha.900', 'whiteAlpha.900');
+  const greyColor = useColorModeValue('gray.300', 'gray.600');
+  const redColor = useColorModeValue('red.800', 'red.100');
 
   return (
     <div>
@@ -67,10 +67,10 @@ const Story = (props) => {
               bodyText={bodyText}
             />
             <Button
-              variant="ghost"
+              // variant="ghost"
               onClick={() => { deleteStory(_id); }}
               float="right"
-              color="blackAlpha.900"
+              variant="ghost"
             >
               Burn The Evidence!
             </Button>

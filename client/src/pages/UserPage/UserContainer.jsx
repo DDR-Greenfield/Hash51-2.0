@@ -64,7 +64,7 @@ const UserContainer = (props) => {
 
   return (
     <div>
-      <Flex color="white">
+      <Flex>
 
         {userObj.username ?
           (
@@ -94,7 +94,7 @@ const UserContainer = (props) => {
             },
           }}
         >
-          <Select placeholder="Sort by:" value={sorted} onChange={(e) => { setSorted(e.target.value); }}>
+          <Select placeholder="Sort by:" variant="filled" value={sorted} onChange={(e) => { setSorted(e.target.value); }}>
             <option value="comments">Comments</option>
             <option value="alphabetical">Title A-Z </option>
             <option value="reverseAlphabetical">Title Z-A</option>
