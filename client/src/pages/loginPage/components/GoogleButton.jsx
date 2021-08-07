@@ -17,10 +17,8 @@ const GoogleButton = () => {
         type="button"
         onClick={getUser}
         borderRadius={10}
-        color="white"
         variant="solid"
         colorScheme="purple"
-        color={whiteColor}
       >
         Sign In With Google
       </Button>
