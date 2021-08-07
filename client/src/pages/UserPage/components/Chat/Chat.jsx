@@ -7,6 +7,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
+  Link,
   ModalContent,
   Input,
   chakra,
@@ -64,10 +65,12 @@ const Chat = (props) => {
 
   return (
     <>
-      <Button onClick={() => {
-        connectUser();
-        onOpen();
-      }}
+      <Button
+        colorScheme="white"
+        onClick={() => {
+          connectUser();
+          onOpen();
+        }}
       >
         Chat
 

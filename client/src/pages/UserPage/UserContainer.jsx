@@ -39,6 +39,7 @@ const UserContainer = (props) => {
           (
             <Box>
               <div>
+                <Chat user={user} />
                 <User user={user} />
                 <ConspiratorList conspirators={conspirators} />
               </div>
@@ -68,7 +69,6 @@ const UserContainer = (props) => {
 
         </Box>
       </Flex>
-      <Chat user={user} />
     </div>
   );
 };
