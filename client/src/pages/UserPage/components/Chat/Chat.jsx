@@ -66,7 +66,6 @@ const Chat = (props) => {
   return (
     <>
       <Button
-        colorScheme="white"
         onClick={() => {
           connectUser();
           onOpen();
