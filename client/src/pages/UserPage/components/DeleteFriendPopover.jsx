@@ -19,9 +19,6 @@ const DeleteFriendPopover = (props) => {
     <Popover>
       <PopoverTrigger>
         <Button
-          float="right"
-          h="8px"
-          mt="2px"
           fontSize="8px"
           colorScheme="red"
           borderTopRadius={0}

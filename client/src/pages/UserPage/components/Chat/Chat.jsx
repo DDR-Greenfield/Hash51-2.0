@@ -72,7 +72,6 @@ const Chat = (props) => {
         }}
       >
         Chat
-
       </Button>
       <Modal
         isOpen={isOpen}
