@@ -14,7 +14,7 @@ const ConspiratorList = () => {
   useEffect(() => {
   }, [conspirators]);
 
-  const textColor = useColorModeValue('green.500', 'green.300');
+  const textColor = useColorModeValue('green.300', 'green.500');
 
   return (
     <VStack

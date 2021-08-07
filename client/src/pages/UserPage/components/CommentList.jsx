@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import {
   Text,
   Box,
-  useColorModeValue
-} from "@chakra-ui/react";
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 import Comment from './Comment';
 import PostComment from './PostComment';
@@ -17,9 +17,9 @@ const CommentList = (props) => {
   const { comments, post_id } = props;
   const { userObj } = useContext(UserContext);
 
-  const textColor = useColorModeValue("green.500", "green.700");
-  const greyColor = useColorModeValue("gray.600" , "gray.300");
-  const whiteColor = useColorModeValue("whiteAlpha.900" , "blackAlpha.900");
+  const textColor = useColorModeValue('green.700', 'green.500');
+  const greyColor = useColorModeValue('gray.300', 'gray.600');
+  const whiteColor = useColorModeValue('blackAlpha.900', 'whiteAlpha.900');
 
   return (
     <Box

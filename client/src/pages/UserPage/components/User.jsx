@@ -13,8 +13,8 @@ const User = () => {
   const { userObj } = useContext(UserContext);
   const { username, profileImage } = userObj;
 
-  const textColor = useColorModeValue('green.500', 'green.700');
-  const greyColor = useColorModeValue('gray.600', 'gray.300');
+  const textColor = useColorModeValue('green.700', 'green.500');
+  const greyColor = useColorModeValue('gray.300', 'gray.600');
 
   return (
     <Box

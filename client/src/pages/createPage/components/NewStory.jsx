@@ -16,8 +16,8 @@ const NewStory = () => {
   const { href } = useContext(EvidenceContext);
   const { userObj } = useContext(UserContext);
 
-  const textColor = useColorModeValue('green.500', 'green.300');
-  const boxColor = useColorModeValue('gray.800', 'gray.700');
+  const textColor = useColorModeValue('green.300', 'green.500');
+  const boxColor = useColorModeValue('gray.700', 'gray.800');
   return (
     <div>
       <Box

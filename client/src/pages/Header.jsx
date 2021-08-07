@@ -11,13 +11,11 @@ import {
 } from '@chakra-ui/react';
 
 import { UserContext } from '../contexts/UserContext';
-import Chat from './UserPage/components/Chat/Chat';
 
 const Header = () => {
-  const { toggleColorMode } = useColorMode();
-  const textColor = useColorModeValue('green.500', 'green.300');
-  const header = useColorModeValue('#201830', '#34274f');
-
+  const { toggleColorMode } = useColorMode('light');
+  const textColor = useColorModeValue('green.300', 'green.500');
+  const header = useColorModeValue('#34274f', '#201830');
   const { isLoggedIn, localLogout } = useContext(UserContext);
   return (
     <div>
