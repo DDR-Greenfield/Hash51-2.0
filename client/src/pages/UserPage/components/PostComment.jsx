@@ -23,8 +23,8 @@ const PostComment = (props) => {
       <Box w="52vw" mb="1.25vh" ml="2vw" bg="gray.200" borderLeftRadius={10}>
         <Textarea
           placeholder="Tinfoil hat not included..."
+          placeholderTextColor="black"
           fontSize="14px"
-          color="black"
           overflowY="scroll"
           sx={{
             '&::-webkit-scrollbar': {
@@ -34,6 +34,9 @@ const PostComment = (props) => {
             },
             '&::-webkit-scrollbar-thumb': {
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            },
+            '&::-webkit-input-placeholder': {
+              color: 'black',
             },
           }}
           onChange={handleCommentBody}

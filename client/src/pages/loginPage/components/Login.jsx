@@ -57,7 +57,6 @@ const Login = (props) => {
             <Stack
               spacing={4}
               p="1rem"
-              backgroundColor={whiteColor}
               boxShadow="md"
               borderRadius={10}
             >
@@ -110,13 +109,13 @@ const Login = (props) => {
 
               <GoogleButton />
 
-              <Box>
+              <Box color="white">
                 Do we know you?
                 {' '}
               </Box>
               <Button
                 borderRadius={10}
-                color={whiteColor}
+
                 onClick={createUserClick}
                 variant="solid"
                 colorScheme="purple"
