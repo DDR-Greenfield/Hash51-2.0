@@ -18,7 +18,6 @@ const Search = () => {
   return (
     <Flex
       w="25vw"
-      bg="white"
       borderRadius={5}
     >
       <InputGroup size="md">
@@ -26,6 +25,7 @@ const Search = () => {
           pr="4.5rem"
           value={value}
           onChange={handleChange}
+          color="white"
         />
         <InputRightElement width="4.5rem">
           <Button
