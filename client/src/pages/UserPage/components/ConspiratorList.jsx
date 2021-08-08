@@ -19,18 +19,15 @@ const ConspiratorList = () => {
   return (
     <VStack
       h="63vh"
+      mt="300px"
+      position="fixed"
       // w="150px"
       divider={<StackDivider borderColor={textColor} />}
-      spacing={2}
-      overflowY="scroll"
+      // spacing={2}
+      overflowY="auto"
       sx={{
         '&::-webkit-scrollbar': {
-          width: '16px',
-          borderRadius: '8px',
-          backgroundColor: 'rgba(0, 0, 0, 0.05)',
-        },
-        '&::-webkit-scrollbar-thumb': {
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          display: 'none',
         },
       }}
     >

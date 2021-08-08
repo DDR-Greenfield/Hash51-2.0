@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Popover,
   Button,
+  Center,
   PopoverTrigger,
   Portal,
   PopoverArrow,
@@ -20,15 +21,18 @@ const AddFriendPopover = (props) => {
   return (
     <Popover>
       <PopoverTrigger>
-        <Button
-          colorscheme="blue"
-          color={color}
-          variant="ghost"
-        >
-          Add
-          {' '}
-          {userName}
-        </Button>
+        <Center>
+          <Button
+            colorscheme="blue"
+            color={color}
+            variant="outline"
+            mt={2}
+          >
+            Add
+            {' '}
+            {userName}
+          </Button>
+        </Center>
       </PopoverTrigger>
       <Portal>
         <PopoverContent>

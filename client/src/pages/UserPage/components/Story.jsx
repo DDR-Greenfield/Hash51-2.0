@@ -27,7 +27,7 @@ const Story = (props) => {
   const textColor = useColorModeValue('green.700', 'green.100');
   const whiteColor = useColorModeValue('blackAlpha.900', 'whiteAlpha.900');
   const greyColor = useColorModeValue('gray.300', 'gray.600');
-  const redColor = useColorModeValue('red.800', 'red.100');
+  const redColor = useColorModeValue('red.600', 'red.300');
 
   return (
     <div>
@@ -101,9 +101,12 @@ const Story = (props) => {
             >
               {userTitle}
             </Heading>
+            <Text>
+              Online Description:
+            </Text>
+            <hr />
             <Text
               ml="10px"
-              fontSize="10px"
               mb="1vh"
               color={redColor}
               pt={2}
@@ -113,6 +116,13 @@ const Story = (props) => {
                 ('Video title of the truth: ')}
               {' '}
               {nasaTitle}
+            </Text>
+            <Text
+              color={whiteColor}
+              fontSize="14px"
+            >
+              User Description
+              <hr />
             </Text>
             <Text
               fontSize="20px"
@@ -133,6 +143,7 @@ const Story = (props) => {
             >
               {bodyText}
             </Text>
+
             <Text
               ml="10px"
               fontSize="16px"

@@ -58,13 +58,14 @@ const UserContainer = (props) => {
   return (
     <div>
       <Flex
-	mt={8}
-	  >
+        mt={12}
+      >
         {userObj.username ?
           (
-            <Box>
+            <Box
+              mr="250px"
+            >
               <div>
-                <Chat user={user} />
                 <User user={user} />
                 <ConspiratorList conspirators={conspirators} />
               </div>
@@ -74,20 +75,7 @@ const UserContainer = (props) => {
           )}
 
         <Box
-          maxH="89vh"
-          minW="50vw"
           verticalAlign="top"
-          overflowY="scroll"
-          sx={{
-            '&::-webkit-scrollbar': {
-              width: '16px',
-              borderRadius: '8px',
-              backgroundColor: 'rgba(0, 0, 0, 0.05)',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            },
-          }}
         >
           <Select placeholder="Sort by:" variant="filled" value={sorted} onChange={(e) => { setSorted(e.target.value); }}>
             <option value="comments">Comments</option>

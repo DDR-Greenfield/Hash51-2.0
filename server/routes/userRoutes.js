@@ -10,7 +10,7 @@ userRouter.post('/store/favorites', async (req, res) => {
   const { id, nasa_id } = req.body;
   console.log(nasa_id);
   await Evidence.findOne({ nasa_id })
-    .then((results) => { console.log('RESULTS OBJ', results); return results; })
+    .then((results) => results)
     .then((data) => User.findOneAndUpdate({ _id: id },
       { $push: { favorites: data } },
       { new: true }))

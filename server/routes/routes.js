@@ -72,10 +72,7 @@ serverRouter.post('/search', (req, res) => {
 serverRouter.post('/asset', (req, res) => {
   const { query } = req.body;
   nasaIdCall(query)
-    .then((data) => {
-      console.log('data', data);
-      return data;
-    })
+    .then((data) => data)
     .then((data) => data.data.collection)
     .then((data) => res.status(201).send(data))
     .catch((err) => {
@@ -182,14 +179,11 @@ serverRouter.put('/story/:evidence_id', (req, res) => {
 });
 
 serverRouter.delete('/storyDelete/:_id', (req, res) => {
-  console.log('hey there');
-  console.log('rec.params: ', req.params);
   const { _id } = req.params;
   Evidence.deleteOne({ _id }, (err, evidence) => {
     if (err) {
       return res.send(err);
     }
-    console.log(`${evidence} was deleted successfully`);
     return res.json({ message: `${evidence} was deleted successfully` });
   });
 });
