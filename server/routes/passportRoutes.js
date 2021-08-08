@@ -45,7 +45,7 @@ passportRouter.post('/login', (req, res) => {
 
 passportRouter.get('/logout', (req, res) => {
   req.session.destroy((err) => {
-    console.log('user successfully logged out', req.user);
+    console.log('user successfully logged out');
   });
 });
 
