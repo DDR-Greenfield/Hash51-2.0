@@ -28,8 +28,6 @@ const AddFriendPopover = (props) => {
           Add
           {' '}
           {userName}
-          {' '}
-          as Co-Conspirator
         </Button>
       </PopoverTrigger>
       <Portal>

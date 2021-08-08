@@ -4,6 +4,7 @@ import {
   Text,
   Box,
   Image,
+  Center,
   useColorModeValue,
 } from '@chakra-ui/react';
 
@@ -18,26 +19,28 @@ const User = () => {
 
   return (
     <Box
-      bg={greyColor}
       mb="1px"
-      w="10vw"
+      w="100%"
       borderRadius={10}
     >
       <Image
-        bg="purple.100"
-        w="10vw"
-        h="10vw"
-        borderTopRadius={10}
+        w="200px"
+        mt={6}
+        mb={6}
+        borderRadius="100%"
         objectFit="cover"
         src={profileImage}
       />
-      <Text
-        ml="10px"
-        fontSize="12px"
-        color={textColor}
+
+      <Center
+        size="2xl"
+        color="white"
       >
-        {username}
-      </Text>
+        <b>
+          {username}
+        </b>
+      </Center>
+
     </Box>
   );
 };

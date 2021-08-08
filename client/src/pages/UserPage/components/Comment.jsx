@@ -50,15 +50,15 @@ const Comment = (props) => {
         >
           <b>{userName}</b>
           :
-          <Text
-            p={1}
-            ml="10px"
-            minH="2vh"
-            fontSize="18px"
-            color={textColor}
-          >
-            {commentBody}
-          </Text>
+        </Text>
+        <Text
+          p={1}
+          ml="10px"
+          minH="2vh"
+          fontSize="18px"
+          color={textColor}
+        >
+          {commentBody}
         </Text>
       </Flex>
     </Box>

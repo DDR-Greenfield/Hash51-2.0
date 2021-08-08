@@ -23,7 +23,6 @@ const PostComment = (props) => {
       <Box w="52vw" mb="1.25vh" ml="2vw" bg="gray.200" borderLeftRadius={10}>
         <Textarea
           placeholder="Tinfoil hat not included..."
-          placeholderTextColor="black"
           fontSize="14px"
           overflowY="scroll"
           sx={{
