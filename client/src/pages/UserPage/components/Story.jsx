@@ -31,6 +31,24 @@ const Story = (props) => {
 
   return (
     <div>
+      {isLoggedIn && userObj.username === userName && (
+      <Button
+              // variant="ghost"
+        onClick={() => { deleteStory(_id); }}
+        float="right"
+        variant="ghost"
+      >
+        Burn The Evidence!
+      </Button>
+      )}
+      {isLoggedIn && userObj.username === userName && (
+      <EditTitleModal
+        float="right"
+        _id={_id}
+        userTitle={userTitle}
+        bodyText={bodyText}
+      />
+      )}
       <Box
         h="59vh"
         w="60vw"
@@ -54,54 +72,31 @@ const Story = (props) => {
               <iframe
                 title="youtubeVideo"
                 src={href}
-                height="545px"
+                height="540vh"
                 width="854px"
               />
             )}
           <Box
             w="17vw"
           >
-            {isLoggedIn && userObj.username === userName && (
-            <EditTitleModal
-              float="right"
-              _id={_id}
-              userTitle={userTitle}
-              bodyText={bodyText}
-            />
-            )}
 
-            {isLoggedIn && userObj.username === userName && (
-            <Button
-              // variant="ghost"
-              onClick={() => { deleteStory(_id); }}
-              float="right"
-              variant="ghost"
-            >
-              Burn The Evidence!
-            </Button>
-            )}
             <Heading
               mt="2vh"
               p={2}
               // maxH="12vh"
-              fontSize="32px"
+              fontSize="42px"
+              as="i"
               // overflowY="scroll"
               color={whiteColor}
-              sx={{
-                '&::-webkit-scrollbar': {
-                  width: '16px',
-                  borderRadius: '8px',
-                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                },
-              }}
-
             >
               {userTitle}
             </Heading>
-            <Text>
+            <hr />
+            <Text
+              ml={2}
+              as="i"
+              fontSize="14px"
+            >
               Online Description:
             </Text>
             <hr />
@@ -117,11 +112,13 @@ const Story = (props) => {
               {' '}
               {nasaTitle}
             </Text>
+            <hr />
             <Text
-              color={whiteColor}
+              as="i"
+              ml={2}
               fontSize="14px"
             >
-              User Description
+              User Description:
               <hr />
             </Text>
             <Text
@@ -130,16 +127,7 @@ const Story = (props) => {
               mt={3}
               color={textColor}
               overflowY="scroll"
-              sx={{
-                '&::-webkit-scrollbar': {
-                  width: '16px',
-                  borderRadius: '8px',
-                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                },
-              }}
+              maxH="30vh"
             >
               {bodyText}
             </Text>
