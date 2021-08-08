@@ -152,12 +152,12 @@ const Story = (props) => {
               {userName}
             </Text>
 
-            {isLoggedIn && (
-            <AddFriendPopover
-              addConspirator={addConspirator}
-              userName={userName}
-              userObj={userObj}
-            />
+            {isLoggedIn && userObj.username !== userName && (
+              <AddFriendPopover
+                addConspirator={addConspirator}
+                userName={userName}
+                userObj={userObj}
+              />
             )}
           </Box>
         </Flex>
