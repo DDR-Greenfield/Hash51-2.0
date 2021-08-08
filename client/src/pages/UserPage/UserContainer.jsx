@@ -44,15 +44,8 @@ const UserContainer = (props) => {
       returnArr = storyToSort;
     }
     fetchStories().then((data) => { setStories(data); });
-    // return returnArr;
     return returnArr.map((story) => (<Story key={story._id} story={story} />));
   };
-
-  // const list = stories.map((story) => (<Story key={story._id} story={story} />));
-
-  // const _list = (_stories) => {
-  //   return _stories.map((story) => (<Story key={story._id} story={story} />));
-  // };
 
   useEffect(() => {
     getUser();
@@ -65,7 +58,6 @@ const UserContainer = (props) => {
   return (
     <div>
       <Flex>
-
         {userObj.username ?
           (
             <Box>

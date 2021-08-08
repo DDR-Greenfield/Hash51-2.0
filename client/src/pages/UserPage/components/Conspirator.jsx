@@ -5,6 +5,9 @@ import {
   Text,
   Box,
   Image,
+  Flex,
+  chakra,
+  Center,
   Badge,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -22,32 +25,38 @@ const Conspirator = (props) => {
 
   return (
     <Box
-      w="8vw"
+      w="100%"
       mb="1px"
       bg={greyColor}
       borderRadius={10}
     >
-      {usersInChat.includes(username) && <Badge>In Chat</Badge>}
-      <Image
-        src={profileImage}
-        bg="purple.100"
-        objectFit="cover"
-        borderTopRadius={10}
-      />
-      <Text
-        mt="4px"
-        ml="10px"
-        fontSize="10px"
-        color={textColor}
-      >
-        {username}
-      </Text>
-      <DeleteFriendPopover
-        updateConspirator={updateConspirator}
-        _id={_id}
-        userName={username}
-        userObj={userObj}
-      />
+      <Center>
+        {usersInChat.includes(username) && <Badge>In Chat</Badge>}
+        <Image
+          src={profileImage}
+          bg="purple.100"
+          w="100px"
+          h="100px"
+          objectFit="cover"
+          borderTopRadius={10}
+        />
+        <chakra.div mr={3}>
+          <Text
+            mt="4px"
+            ml="10px"
+            fontSize="10px"
+            color={textColor}
+          >
+            {username}
+          </Text>
+          <DeleteFriendPopover
+            updateConspirator={updateConspirator}
+            _id={_id}
+            userName={username}
+            userObj={userObj}
+          />
+        </chakra.div>
+      </Center>
     </Box>
   );
 };

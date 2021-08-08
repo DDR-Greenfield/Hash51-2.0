@@ -21,6 +21,7 @@ const Story = (props) => {
   const { userName, nasaTitle, userTitle, href, bodyText, comments, _id } = story;
 
   const { addConspirator, userObj, isLoggedIn } = useContext(UserContext);
+
   const { deleteStory } = useContext(DisplayContext);
 
   const textColor = useColorModeValue('green.700', 'green.100');
@@ -42,7 +43,7 @@ const Story = (props) => {
             (
               <Image
                 src={href}
-                h="55vh"
+                h="59vh"
                 w="45vw"
                 bg="purple.100"
                 fit="cover"
@@ -53,19 +54,23 @@ const Story = (props) => {
               <iframe
                 title="youtubeVideo"
                 src={href}
-                height="480px"
+                height="545px"
                 width="854px"
               />
             )}
           <Box
             w="17vw"
           >
+            {isLoggedIn && userObj.username === userName && (
             <EditTitleModal
               float="right"
               _id={_id}
               userTitle={userTitle}
               bodyText={bodyText}
             />
+            )}
+
+            {isLoggedIn && userObj.username === userName && (
             <Button
               // variant="ghost"
               onClick={() => { deleteStory(_id); }}
@@ -74,6 +79,7 @@ const Story = (props) => {
             >
               Burn The Evidence!
             </Button>
+            )}
             <Heading
               mt="2vh"
               p={2}
@@ -95,11 +101,22 @@ const Story = (props) => {
             >
               {userTitle}
             </Heading>
-
+            <Text
+              ml="10px"
+              fontSize="10px"
+              mb="1vh"
+              color={redColor}
+              pt={2}
+            >
+              {href.slice(0, 8) !== 'http://y' ?
+                ('NASA image title: ') :
+                ('Video title of the truth: ')}
+              {' '}
+              {nasaTitle}
+            </Text>
             <Text
               fontSize="20px"
               p={3}
-              h="38vh"
               mt={3}
               color={textColor}
               overflowY="scroll"
@@ -115,25 +132,26 @@ const Story = (props) => {
               }}
             >
               {bodyText}
-              <Text
-                ml="10px"
-                fontSize="16px"
-                mt={1}
-                as="u"
-                color={whiteColor}
-                // eslint-disable-next-line consistent-return
-                onClick={() => {
-                  if (userObj.username) {
-                    return addConspirator(userName);
-                  }
-                }}
-              >
-
-                Created by
-                {' '}
-                {userName}
-              </Text>
             </Text>
+            <Text
+              ml="10px"
+              fontSize="16px"
+              mt={1}
+              as="u"
+              color={whiteColor}
+                // eslint-disable-next-line consistent-return
+              onClick={() => {
+                if (userObj.username) {
+                  return addConspirator(userName);
+                }
+              }}
+            >
+
+              Created by
+              {' '}
+              {userName}
+            </Text>
+
             {isLoggedIn && (
             <AddFriendPopover
               addConspirator={addConspirator}
@@ -143,20 +161,6 @@ const Story = (props) => {
             )}
           </Box>
         </Flex>
-        <Text
-          ml="10px"
-          fontSize="10px"
-          mb="1vh"
-          color={redColor}
-          pt={2}
-        >
-          {href.slice(0, 8) !== 'http://y' ?
-            ('NASA image title: ') :
-            ('Video title of the truth: ')}
-          {' '}
-          {nasaTitle}
-        </Text>
-
       </Box>
       <CommentList comments={comments} post_id={_id} />
     </div>
