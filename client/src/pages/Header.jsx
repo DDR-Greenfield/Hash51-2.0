@@ -18,8 +18,11 @@ const Header = () => {
   const header = useColorModeValue('#34274f', '#201830');
   const { isLoggedIn, localLogout } = useContext(UserContext);
   return (
-    <div>
+    <div
+	  >
       <Flex
+	  w="100%"
+	  position="fixed"
         justify="space-between"
         borderBottom="1px"
         bg={header}

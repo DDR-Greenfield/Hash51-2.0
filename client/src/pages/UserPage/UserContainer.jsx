@@ -57,7 +57,9 @@ const UserContainer = (props) => {
 
   return (
     <div>
-      <Flex>
+      <Flex
+	mt={8}
+	  >
         {userObj.username ?
           (
             <Box>
