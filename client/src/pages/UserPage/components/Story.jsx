@@ -123,7 +123,7 @@ const Story = (props) => {
             </Text>
             <Text
               fontSize="20px"
-              p={3}
+              ml="10px"
               mt={3}
               color={textColor}
               overflowY="scroll"
@@ -138,12 +138,6 @@ const Story = (props) => {
               mt={1}
               as="u"
               color={whiteColor}
-                // eslint-disable-next-line consistent-return
-              onClick={() => {
-                if (userObj.username) {
-                  return addConspirator(userName);
-                }
-              }}
             >
 
               Created by
