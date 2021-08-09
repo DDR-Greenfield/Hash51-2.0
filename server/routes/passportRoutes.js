@@ -18,10 +18,14 @@ passportRouter.post('/register', (req, res) => {
       res.sendStatus(500);
     } else {
       passport.authenticate('local')(req, res, async (error, result) => {
-        await User.findOneAndUpdate({ username }, {
-          source: 'local',
-          email: username,
-          profileImage: 'https://insa.or.id/wp-content/uploads/2017/02/profile-default-large.jpg' });
+        await User.findOneAndUpdate(
+          { username },
+          {
+            source: 'local',
+            email: username,
+            profileImage: 'https://insa.or.id/wp-content/uploads/2017/02/profile-default-large.jpg',
+          },
+        );
         res.status(200).redirect('/userLogin');
       });
     }
@@ -45,20 +49,24 @@ passportRouter.post('/login', (req, res) => {
 
 passportRouter.get('/logout', (req, res) => {
   req.session.destroy((err) => {
-    console.log('user successfully logged out', req.user);
+    console.log('user successfully logged out');
   });
 });
 
 // Google Strategy //
-passportRouter.get('/auth/google',
+passportRouter.get(
+  '/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] }),
-  (req, res) => res.status(200).send(req.user));
+  (req, res) => res.status(200).send(req.user),
+);
 
-passportRouter.get('/auth/google/login',
+passportRouter.get(
+  '/auth/google/login',
   passport.authenticate('google', { failureRedirect: 'http://localhost:3000/error' }),
   (req, res) => {
     res.redirect('/');
-  });
+  },
+);
 
 passportRouter.get('/getUser', (req, res) => {
   res.send(req.user);

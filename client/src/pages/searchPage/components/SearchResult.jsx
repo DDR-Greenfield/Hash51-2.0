@@ -63,9 +63,9 @@ const SearchResult = () => {
       >
         <SimpleGrid columns={4} spacing={10}>
           {
-            searchResults.map((result) => (
+            searchResults.map((result, i) => (
             // eslint-disable-next-line react/no-array-index-key
-              <div key={result.nasa_id}>
+              <div key={i}>
                 <Link to={`story/${result.nasa_id}`}>
                   <Image
                     m={1}

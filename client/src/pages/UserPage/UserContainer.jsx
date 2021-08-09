@@ -3,11 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Flex,
-  Box,
-  Select,
-} from '@chakra-ui/react';
+import { Flex, Box, Select } from '@chakra-ui/react';
 
 import { DisplayContext } from '../../contexts/DisplayContext';
 import { UserContext } from '../../contexts/UserContext';
@@ -43,8 +39,10 @@ const UserContainer = (props) => {
     } else {
       returnArr = storyToSort;
     }
-    fetchStories().then((data) => { setStories(data); });
-    return returnArr.map((story) => (<Story key={story._id} story={story} />));
+    fetchStories().then((data) => {
+      setStories(data);
+    });
+    return returnArr.map((story) => <Story key={story._id} story={story} />);
   };
 
   useEffect(() => {
@@ -52,51 +50,37 @@ const UserContainer = (props) => {
     sort(stories);
     getEvidence();
     getConspirators();
-  },
-  [JSON.stringify(userObj), sorted]);
+  }, [JSON.stringify(userObj), sorted]);
 
   return (
     <div>
-      <Flex
-	mt={8}
-	  >
-        {userObj.username ?
-          (
-            <Box>
-              <div>
-                <Chat user={user} />
-                <User user={user} />
-                <ConspiratorList conspirators={conspirators} />
-              </div>
-            </Box>
-          ) : (
-            <div />
-          )}
+      <Flex mt={12}>
+        {userObj.username ? (
+          <Box mr="250px">
+            <div>
+              <User user={user} />
+              <ConspiratorList conspirators={conspirators} />
+            </div>
+          </Box>
+        ) : (
+          <div />
+        )}
 
-        <Box
-          maxH="89vh"
-          minW="50vw"
-          verticalAlign="top"
-          overflowY="scroll"
-          sx={{
-            '&::-webkit-scrollbar': {
-              width: '16px',
-              borderRadius: '8px',
-              backgroundColor: 'rgba(0, 0, 0, 0.05)',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            },
-          }}
-        >
-          <Select placeholder="Sort by:" variant="filled" value={sorted} onChange={(e) => { setSorted(e.target.value); }}>
+        <Box verticalAlign="top">
+          <Select
+            placeholder="Sort by:"
+            variant="filled"
+            value={sorted}
+            onChange={(e) => {
+              setSorted(e.target.value);
+            }}
+          >
             <option value="comments">Comments</option>
             <option value="alphabetical">Title A-Z </option>
             <option value="reverseAlphabetical">Title Z-A</option>
           </Select>
 
           {sort(stories)}
-
         </Box>
       </Flex>
     </div>

@@ -25,10 +25,9 @@ function DisplayContextProvider({ children }) {
       }));
   };
 
-  const editStory = (_id, newTitle, newDescription) => axios.patch('/routes/storyUpdate', { _id, newTitle, newDescription }).then((data) => console.log(data));
+  const editStory = (_id, newTitle, newDescription) => axios.patch('/routes/storyUpdate', { _id, newTitle, newDescription }).then((data) => data);
 
   const deleteStory = async (postId) => {
-    console.log(postId);
     await axios.delete(`/routes/storyDelete/${postId}`)
       .then((data) => data);
   };

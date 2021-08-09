@@ -33,8 +33,8 @@ const App = () => {
       <Header />
       <Flex
         flexDirection="column"
-        width="100wh"
-        minH="92.75vh"
+        width="100%"
+        minH="100vh"
         bg={bg}
         justifyContent="top"
         alignItems="center"

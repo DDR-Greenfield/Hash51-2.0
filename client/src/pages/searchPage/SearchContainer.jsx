@@ -10,6 +10,7 @@ import SearchResult from './components/SearchResult';
 const SearchContainer = () => (
   <div>
     <Flex
+      mt={12}
       justifyContent="center"
       alignItems="center"
     >

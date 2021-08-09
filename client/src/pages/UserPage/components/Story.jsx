@@ -27,10 +27,28 @@ const Story = (props) => {
   const textColor = useColorModeValue('green.700', 'green.100');
   const whiteColor = useColorModeValue('blackAlpha.900', 'whiteAlpha.900');
   const greyColor = useColorModeValue('gray.300', 'gray.600');
-  const redColor = useColorModeValue('red.800', 'red.100');
+  const redColor = useColorModeValue('red.600', 'red.300');
 
   return (
     <div>
+      {isLoggedIn && userObj.username === userName && (
+      <Button
+              // variant="ghost"
+        onClick={() => { deleteStory(_id); }}
+        float="right"
+        variant="ghost"
+      >
+        Burn The Evidence!
+      </Button>
+      )}
+      {isLoggedIn && userObj.username === userName && (
+      <EditTitleModal
+        float="right"
+        _id={_id}
+        userTitle={userTitle}
+        bodyText={bodyText}
+      />
+      )}
       <Box
         h="59vh"
         w="60vw"
@@ -54,56 +72,36 @@ const Story = (props) => {
               <iframe
                 title="youtubeVideo"
                 src={href}
-                height="545px"
+                height="540vh"
                 width="854px"
               />
             )}
           <Box
             w="17vw"
           >
-            {isLoggedIn && userObj.username === userName && (
-            <EditTitleModal
-              float="right"
-              _id={_id}
-              userTitle={userTitle}
-              bodyText={bodyText}
-            />
-            )}
 
-            {isLoggedIn && userObj.username === userName && (
-            <Button
-              // variant="ghost"
-              onClick={() => { deleteStory(_id); }}
-              float="right"
-              variant="ghost"
-            >
-              Burn The Evidence!
-            </Button>
-            )}
             <Heading
               mt="2vh"
               p={2}
               // maxH="12vh"
-              fontSize="32px"
+              fontSize="42px"
+              as="i"
               // overflowY="scroll"
               color={whiteColor}
-              sx={{
-                '&::-webkit-scrollbar': {
-                  width: '16px',
-                  borderRadius: '8px',
-                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                },
-              }}
-
             >
               {userTitle}
             </Heading>
+            <hr />
+            <Text
+              ml={2}
+              as="i"
+              fontSize="14px"
+            >
+              Online Description:
+            </Text>
+            <hr />
             <Text
               ml="10px"
-              fontSize="10px"
               mb="1vh"
               color={redColor}
               pt={2}
@@ -114,37 +112,32 @@ const Story = (props) => {
               {' '}
               {nasaTitle}
             </Text>
+            <hr />
+            <Text
+              as="i"
+              ml={2}
+              fontSize="14px"
+            >
+              User Description:
+              <hr />
+            </Text>
             <Text
               fontSize="20px"
-              p={3}
+              ml="10px"
               mt={3}
               color={textColor}
               overflowY="scroll"
-              sx={{
-                '&::-webkit-scrollbar': {
-                  width: '16px',
-                  borderRadius: '8px',
-                  backgroundColor: 'rgba(0, 0, 0, 0.05)',
-                },
-                '&::-webkit-scrollbar-thumb': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                },
-              }}
+              maxH="30vh"
             >
               {bodyText}
             </Text>
+
             <Text
               ml="10px"
               fontSize="16px"
               mt={1}
               as="u"
               color={whiteColor}
-                // eslint-disable-next-line consistent-return
-              onClick={() => {
-                if (userObj.username) {
-                  return addConspirator(userName);
-                }
-              }}
             >
 
               Created by

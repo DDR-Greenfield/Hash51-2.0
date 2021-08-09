@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import {
-  Text,
+  chakra,
   Box,
   Image,
   Center,
@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 
 import { UserContext } from '../../../contexts/UserContext';
+import Chat from './Chat/Chat';
 
 const User = () => {
   const { userObj } = useContext(UserContext);
@@ -18,30 +19,35 @@ const User = () => {
   const greyColor = useColorModeValue('gray.300', 'gray.600');
 
   return (
-    <Box
-      mb="1px"
-      w="100%"
-      borderRadius={10}
+    <chakra.div
+      position="fixed"
     >
-      <Image
-        w="200px"
-        mt={6}
-        mb={6}
-        borderRadius="100%"
-        objectFit="cover"
-        src={profileImage}
-      />
-
-      <Center
-        size="2xl"
-        color="white"
+      <Chat />
+      <Box
+        mb="1px"
+        w="100%"
+        borderRadius={10}
       >
-        <b>
-          {username}
-        </b>
-      </Center>
+        <Image
+          w="200px"
+          mt={6}
+          mb={6}
+          borderRadius="100%"
+          objectFit="cover"
+          src={profileImage}
+        />
 
-    </Box>
+        <Center
+          size="2xl"
+          color="white"
+        >
+          <b>
+            {username}
+          </b>
+        </Center>
+
+      </Box>
+    </chakra.div>
   );
 };
 
